@@ -6,5 +6,25 @@
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className
 ){
-  // your code here
+ 
+	var result = [];
+
+	function keepOn(boddy) {
+
+		for(var i = 0;i<boddy.childNode.length;i++){
+			if($(boddy.childNode[i]).hasClass(className)){
+				result.push(boddy.childNode[i]);
+			}
+
+			if(boddy.childNode[i].hasChildNodes()){
+				keepOn(boddy.childNode[i])
+			}
+		}
+
+
+	}
+
+
+		return result;
+
 };
